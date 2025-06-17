@@ -11,7 +11,9 @@ class GuessingGame {
             String guess = scanner.nextLine();
             while (true) {
                 if (guess.trim().equalsIgnoreCase("q")) {
-                    break;
+                    System.out.println("Exiting guessing game");
+                    scanner.close();
+                    return;
                 } else if (guess.trim().contains(" ")) {
                     System.out.println("Can only accept one argument at a time! Guess again: ");
                     guess = scanner.nextLine();
@@ -32,11 +34,6 @@ class GuessingGame {
                     }
                 }
             }
-            if (guess.trim().equalsIgnoreCase("q")) {
-                System.out.println("Exiting guessing game");
-                break;
-            }
         }
-        scanner.close();
     }
 }
