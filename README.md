@@ -12,7 +12,7 @@
     - An elementary numeric guessing game that accepts one number at a time.
 
 4. `HelloWorld.java`
-    - The iconic and pythonic 'Hello, World!' program.
+    - The iconic 'Hello, World!' program.
 
 5. `PalindromeChecker.java`
     - A recursive palindrome checker that accepts a single string as an argument.
