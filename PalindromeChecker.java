@@ -17,10 +17,10 @@ class PalindromeChecker {
             String palindrome = scanner.nextLine();
             if (palindrome.trim().equalsIgnoreCase("q")) {
                 System.out.println("Exiting palindrome checker");
+                scanner.close();
                 break;
             }
             System.out.println(checkPalindrome(palindrome));
         }
-        scanner.close();
     }
 }

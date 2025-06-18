@@ -10,26 +10,27 @@ class GuessingGame {
             System.out.print("I am thinking of a number 1-100. Take a guess or type 'Q' to quit: ");
             String guess = scanner.nextLine();
             while (true) {
-                if (guess.trim().equalsIgnoreCase("q")) {
+                String trimmed = guess.trim();
+                if (trimmed.equalsIgnoreCase("q")) {
                     System.out.println("Exiting guessing game");
                     scanner.close();
                     return;
-                } else if (guess.trim().contains(" ")) {
-                    System.out.println("Can only accept one argument at a time! Guess again: ");
+                } else if (trimmed.contains(" ")) {
+                    System.out.print("Can only accept one argument at a time! Guess again: ");
                     guess = scanner.nextLine();
-                } else if (!guess.trim().matches("\\d+")) {
-                    System.out.println("Input must be an integer! Guess again: ");
+                } else if (!trimmed.matches("\\d+")) {
+                    System.out.print("Input must be an integer! Guess again: ");
                     guess = scanner.nextLine();
                 } else {
                     int numGuess = Integer.parseInt(guess);
                     if (numGuess < 1 || numGuess > 100) {
-                        System.out.println("The magic number is between 1 & 100! Guess again: ");
+                        System.out.print("The magic number is between 1 & 100! Guess again: ");
                         guess = scanner.nextLine();
                     } else if (magicNumber != numGuess) {
-                        System.out.println("Not quite! Guess again: ");
+                        System.out.print("Not quite! Guess again: ");
                         guess = scanner.nextLine();
                     } else {
-                        System.out.println("You got it! Let's play again.");
+                        System.out.print("You got it! Let's play again.");
                         break;
                     }
                 }

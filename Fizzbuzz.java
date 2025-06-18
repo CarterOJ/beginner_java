@@ -26,17 +26,18 @@ class Fizzbuzz {
         while (true) {
             System.out.print("Please enter the iteration amount to fizzbuzz. Type 'Q' to quit: ");
             String iters = scanner.nextLine();
-            if (iters.trim().equalsIgnoreCase("q")) {
+            String trimmed = iters.trim();
+            if (trimmed.equalsIgnoreCase("q")) {
                 System.out.println("Exiting fizzbuzz");
+                scanner.close();
                 break;
-            } else if (iters.trim().contains(" ")) {
+            } else if (trimmed.contains(" ")) {
                 System.out.println("Can only accept one argument!");
-            } else if (!iters.trim().matches("\\d+")) {
+            } else if (!trimmed.matches("\\d+")) {
                 System.out.println("Input must be a positive integer!");
             } else {
-                System.out.println(fizzbuzz(new BigInteger(iters.trim())));
+                System.out.println(fizzbuzz(new BigInteger(trimmed)));
             }
         }
-        scanner.close();
     }
 }

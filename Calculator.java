@@ -25,16 +25,13 @@ public class Calculator {
             String userIn = scanner.nextLine();
             if (userIn.trim().equalsIgnoreCase("q")) {
                 System.out.println("Exiting calculator");
+                scanner.close();
                 break;
             }
             List<String> tokens = new ArrayList<>();
             Matcher matcher = tokenPattern.matcher(userIn.replaceAll("\\s+", ""));
             while (matcher.find()) {
                 tokens.add(matcher.group());
-            }
-            if (tokens.size() == 2 && tokens.get(1).startsWith("-")) {
-                tokens.add(tokens.get(1).replace("-", ""));
-                tokens.set(1, "-");
             }
             if (tokens.size() != 3) {
                 System.out.println("There must be exactly three arguments!");
@@ -51,6 +48,5 @@ public class Calculator {
                 System.out.printf("Result: %s%n", df.format(result));
             }
         }
-        scanner.close();
     }
 }
