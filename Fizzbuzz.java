@@ -31,7 +31,7 @@ class Fizzbuzz {
                 System.out.println("Exiting fizzbuzz");
                 scanner.close();
                 break;
-            } else if (trimmed.contains(" ")) {
+            } else if (trimmed.contains(" ") || trimmed.contains("\t")) {
                 System.out.println("Can only accept one argument!");
             } else if (!trimmed.matches("\\d+")) {
                 System.out.println("Input must be a positive integer!");
