@@ -19,7 +19,7 @@ public class Calculator {
         System.out.println("To use the calculator, please adhere to the following format: [int] '+'||'-'||'*'||'/' [int].");
         Scanner scanner = new Scanner(System.in);
         DecimalFormat df = new DecimalFormat("0.######");
-        Pattern tokenPattern = Pattern.compile("(?:^|(?<=[+\\-*/]))-?\\w+(?:\\.\\w+)?|[+\\-*/]");
+        Pattern tokenPattern = Pattern.compile("(?:^|(?<=[+\\-*/]))-?(?:\\w+(?:\\.\\w+)?|\\.\\w+)|[+\\-*/]");
         while (true) {
             System.out.println("Enter an expression or type 'Q' to quit: ");
             String userIn = scanner.nextLine();
